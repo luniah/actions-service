@@ -1,0 +1,78 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Test API",
+        "description": "Test API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000",
+            "description": "Local server"
+        }
+    ],
+    "paths": {
+        "/hello": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Say hello",
+                "description": "Returns a simple hello message",
+                "operationId": "f9105e57412164f50bcca1cfd09f3566",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Hello World!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bye": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Say goodbye",
+                "description": "Returns a simple goodbye message",
+                "operationId": "067f4c7f754aeb571abb72652c1b8ef4",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Goodbye!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Example",
+            "description": "Simple example endpoints"
+        }
+    ]
+}
