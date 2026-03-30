@@ -2,27 +2,22 @@
 
 namespace App\Http\Controllers;
 
-/**
- * @OA\Tag(
- *     name="contr",
- *     description="example endpoints"
- * )
- */
+use OpenApi\Attributes as OA;
+
+#[OA\Info(
+    version: "1.0.0",
+    description: "Test API",
+    title: "Test API"
+)]
+#[OA\Server(
+    url: "http://127.0.0.1:8000",
+    description: "Local server"
+)]
+#[OA\Tag(
+    name: "Controller",
+    description: "Example"
+)]
 abstract class Controller
 {
-    // Если вы не планируете использовать этот метод напрямую,
-    // лучше убрать аннотацию @OA\Get отсюда, чтобы не было дублирования.
-    // Оставлю только для примера, но в реальности можно удалить.
-    /**
-     * @OA\Get(
-     *     path="/hello",
-     *     summary="Say hello (from base controller)",
-     *     tags={"contr"},
-     *     @OA\Response(response=200, description="Hello message")
-     * )
-     */
-    public function hello()
-    {
-        return response()->json(['message' => 'Hello World!']);
-    }
+    //
 }
